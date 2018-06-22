@@ -15,4 +15,15 @@ let myArray = [1, 3];
 addArrayProperty(myObj, myStr, myArray);
 console.log(myObj.myProperty); // --> [1, 3]
 
+/* 2. Contador de propiedades
+Dado un objeto como parámetro, contar la cantidad de propiedades
+que este contiene y retornarlo. */
+
+const objectPropertiesCounter = (object) => {
+  return Object.keys(object).length;
+};
+
+console.log(objectPropertiesCounter({ 'name': 'John', 'lastname': 'Doe' }));
+
+
 
