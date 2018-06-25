@@ -25,5 +25,24 @@ const objectPropertiesCounter = (object) => {
 
 console.log(objectPropertiesCounter({ 'name': 'John', 'lastname': 'Doe' }));
 
+/* 3. removeStringValuesLongerThan
+Dado un número y un objeto,"removeStringValuesLongerThan" 
+elimina cualquier propiedad en el objeto dado cuyos valores son cadenas de texto
+más largas que el número dado.*/
 
+const obj = {
+  name: 'Montana',
+  age: 20,
+  location: 'Texas'
+};
+
+function removeStringValuesLongerThan (num, obj) {
+for (let key in obj) {
+  if (obj [key].length > num) {
+    delete obj [key];
+    console.log (obj);
+  }
+}
+}
+removeStringValuesLongerThan(6, obj);
 
