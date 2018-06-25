@@ -46,3 +46,29 @@ for (let key in obj) {
 }
 removeStringValuesLongerThan(6, obj);
 
+/* 4. getElementOfArrayProperty
+Dado un objeto, una clave y un índice numérico, 
+getElementOfArrayProperty devuelve el valor del elemento 
+en el índice dado del arreglo localizado dentro del objeto dado en la clave dada.
+Si el arreglo está vacío, debería devolver undefined.
+Si el índice dado está fuera de rango del arreglo ubicado en la clave dada, debería devolver undefined.
+Si la propiedad en la clave dada no es un arreglo, debería devolver undefined.
+Si no hay ninguna propiedad en la clave, debería devolverse undefined.*/
+
+const objR = {
+  key: ['Jamil', 'Albrey']
+};
+
+function getElementOfArrayProperty (obj, key, index) {
+  if (obj [key] === undefined) {
+    return undefined;
+  }
+  if (Array.isArray(obj[key]) === false) {
+    return undefined;
+  }
+  return obj[key][index];
+}
+
+let output = getElementOfArrayProperty(obj,'key',0);
+console.log(output);
+
