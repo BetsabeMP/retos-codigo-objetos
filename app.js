@@ -72,3 +72,55 @@ function getElementOfArrayProperty (obj, key, index) {
 let output = getElementOfArrayProperty(obj,'key',0);
 console.log(output);
 
+/* 5. greetCustomer
+Dando un nombre, greetCustomer devuelve un saludo basado en cuántas veces
+ese cliente ha visitado el restaurante.
+
+El saludo debe ser diferente, dependiendo del nombre de la reservación.
+
+Caso 1 - Cliente desconocido (el nombre no está presente en los datos de cliente):
+var output = greetCustomer('Terrance');
+console.log(output); // --> 'Welcome! Is this your first time?'
+
+Caso 2 - Cliente que ha visitado sólo una vez (el valor de las visitas es 1)
+var output = greetCustomer('Joe');
+console.log(output); // --> 'Welcome back, Joe! We're glad you liked us the first time!'
+
+Caso 3 - Repetir cliente: (valor de' visitas' es mayor que 1)
+var output = greetCustomer('Carol');
+console.log(output); // --> 'Welcome back, Carol! So glad to see you again!'
+Notas:
+
+Tu función no debe alterar el objeto customerData para actualizar el número de visitas.
+No codificar los datos exactos de la muestra. */
+
+const customerData = {
+  'Joe': {
+    visits: 1
+  },
+  'Carol': {
+    visits: 2
+  },
+  'Howard': {
+    visits: 3
+  },
+  'Carrie': {
+    visits: 4
+  }
+};
+
+function greetCustomer(name) {
+  let greeting = "";
+
+  if (customerData[name] === undefined) {
+    greeting = "Welcome! Is this your first time?";
+  } else if (customerData[name].visits == 1) {
+    greeting ="Welcome back, " + name + "! We're glad you liked us the first time!";
+    } else if (customerData[name].visits > 1) {
+      greeting = "Welcome back, " + name + "! So glad to see you again!";
+      }
+
+  return greeting;
+}
+
+console.log(greetCustomer('Joe'));
