@@ -114,7 +114,7 @@ function greetCustomer(name) {
 
   if (customerData[name] === undefined) {
     greeting = "Welcome! Is this your first time?";
-  } else if (customerData[name].visits == 1) {
+  } else if (customerData[name].visits === 1) {
     greeting ="Welcome back, " + name + "! We're glad you liked us the first time!";
     } else if (customerData[name].visits > 1) {
       greeting = "Welcome back, " + name + "! So glad to see you again!";
